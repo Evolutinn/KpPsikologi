@@ -1,4 +1,5 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
+<!-- tes commit -->
 <!-- begin:: Header Mobile -->
 <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
     <div class="kt-header-mobile__logo">
@@ -71,6 +72,10 @@
                 </div>
             </div>
 
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
             <!-- end:: Aside -->
 
             <!-- begin:: Aside Menu -->
@@ -78,7 +83,8 @@
                 <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1"
                     data-ktmenu-dropdown-timeout="500">
                     <ul class="kt-menu__nav ">
-                        <li class="kt-menu__item  kt-menu__item--active" ariap="tr-haspopuue"><a href="index.html"
+                    <?php if($this->session->userdata('level') == 'Petugas'){?>
+                        <li class="kt-menu__item  kt-menu__item--active" ariap="tr-haspopuue"><a href="<?php echo base_url('dashboard');?>"
                                 class="kt-menu__link "><span class="kt-menu__link-icon"><svg
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                         width="24px" height="24px" viewBox="0 0 24 24" version="1.1"
@@ -95,7 +101,7 @@
                                     </svg></span><span class="kt-menu__link-text">Dashboard</span></a></li>
 
                         <li class="kt-menu__item  kt-menu__item--submenu" ariap="tr-haspopuue"><a
-                                href="custom/pages/daftarUser/dUser.html" class="kt-menu__link "><span
+                                href="<?php echo base_url('user');?>" class="kt-menu__link "><span
                                     class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg"
                                         xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
                                         viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
@@ -109,8 +115,6 @@
                                                 fill="#000000" opacity="0.3" />
                                         </g>
                                     </svg></span><span class="kt-menu__link-text">Data Penggua</span></a></li>
-
-
                         <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
                             data-ktmenu-submenu-toggle="hover">
                             <a href="javascript:;" class="kt-menu__link kt-menu__toggle"><span
@@ -189,6 +193,7 @@
                                 </ul>
                             </div>
                         </li>
+                        <?php }?>
                     </ul>
                 </div>
             </div>
@@ -331,3 +336,5 @@
 
                 <!-- end:: Header Topbar -->
             </div>
+
+

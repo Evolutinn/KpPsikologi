@@ -1,10 +1,4 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-
-<?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
-
-<?php if ($this->session->userdata('level') == 'Anggota') {
-  redirect(base_url('transaksi'));
-} ?>
 <!DOCTYPE html>
 
 <!--
