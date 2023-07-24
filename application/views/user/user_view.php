@@ -1,4 +1,5 @@
-<?php if(! defined('BASEPATH')) exit('No direct script acess allowed');?>
+<?php if (!defined('BASEPATH'))
+    exit('No direct script acess allowed'); ?>
 <div class="content-wrapper">
   <section class="content-header">
     <h1>

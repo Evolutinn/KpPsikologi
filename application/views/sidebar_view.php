@@ -135,19 +135,19 @@
                                             class="kt-menu__link"><span class="kt-menu__link-text">Pages</span></span>
                                     </li>
                                     <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                                        data-ktmenu-submenu-toggle="hover"><a href="index.html"
+                                        data-ktmenu-submenu-toggle="hover"><a href="<?php echo base_url("data");?>"
                                             class="kt-menu__link kt-menu__toggle"><i
                                                 class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
                                                 class="kt-menu__link-text">Data Buku</span></a>
                                     </li>
                                     <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                                        data-ktmenu-submenu-toggle="hover"><a href="index.html"
+                                        data-ktmenu-submenu-toggle="hover"><a href="<?php echo base_url("data/kategori");?>"
                                             class="kt-menu__link kt-menu__toggle"><i
                                                 class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
                                                 class="kt-menu__link-text">Kategori</span></a>
                                     </li>
                                     <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                                        data-ktmenu-submenu-toggle="hover"><a href="index.html"
+                                        data-ktmenu-submenu-toggle="hover"><a href="<?php echo base_url("data/rak");?>"
                                             class="kt-menu__link kt-menu__toggle"><i
                                                 class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
                                                 class="kt-menu__link-text">Rak</span></a>
@@ -178,13 +178,13 @@
                                             class="kt-menu__link"><span class="kt-menu__link-text">Pages</span></span>
                                     </li>
                                     <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                                        data-ktmenu-submenu-toggle="hover"><a href="index.html"
+                                        data-ktmenu-submenu-toggle="hover"><a href="<?php echo base_url("transaksi");?>"
                                             class="kt-menu__link kt-menu__toggle"><i
                                                 class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
                                                 class="kt-menu__link-text">Peminjaman</span></a>
                                     </li>
                                     <li class="kt-menu__item  kt-menu__item--submenu" aria-haspopup="true"
-                                        data-ktmenu-submenu-toggle="hover"><a href="index.html"
+                                        data-ktmenu-submenu-toggle="hover"><a href="<?php echo base_url("transaksi/kembali");?>"
                                             class="kt-menu__link kt-menu__toggle"><i
                                                 class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i><span
                                                 class="kt-menu__link-text">Pengembalian</span></a>
@@ -263,7 +263,7 @@
 
                             <!--begin: Navigation -->
                             <div class="kt-notification">
-                                <a href="custom/apps/user/profile-1/personal-information.html"
+                                <a href="<?= base_url('user/edit/'.$idbo);?>"
                                     class="kt-notification__item">
                                     <div class="kt-notification__item-icon">
                                         <i class="flaticon2-calendar-3 kt-font-success"></i>
@@ -278,7 +278,7 @@
                                     </div>
                                 </a>
 
-                                <a href="custom/apps/user/profile-2.html" class="kt-notification__item">
+                                <a href="<?php echo base_url("transaksi/kembali");?>" class="kt-notification__item">
                                     <div class="kt-notification__item-icon">
                                         <i class="flaticon2-rocket-1 kt-font-danger"></i>
                                     </div>
@@ -291,7 +291,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="custom/apps/user/profile-3.html" class="kt-notification__item">
+                                <a href="<?php echo base_url("data");?>" class="kt-notification__item">
                                     <div class="kt-notification__item-icon">
                                         <i class="flaticon2-hourglass kt-font-brand"></i>
                                     </div>
@@ -304,7 +304,7 @@
                                         </div>
                                     </div>
                                 </a>
-                                <a href="custom/apps/user/profile-1/overview.html" class="kt-notification__item">
+                                <a href="<?php echo base_url("transaksi");?>" class="kt-notification__item">
                                     <div class="kt-notification__item-icon">
                                         <i class="flaticon2-cardiogram kt-font-warning"></i>
                                     </div>
