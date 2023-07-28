@@ -64,7 +64,7 @@
                         </g>
                       </svg> </span>
                     <span class="kt-widget17__subtitle">
-                      <a href="#">Anggota</a>
+                      <a href="user">Anggota</a>
                     </span>
                     <span class="kt-widget17__desc">
                     <?= $count_pengguna;?> Anggota
@@ -85,7 +85,7 @@
                         </g>
                       </svg> </span>
                     <span class="kt-widget17__subtitle">
-                      <a href="#">Jenis Buku</a>
+                      <a href="data">Jenis Buku</a>
                     </span>
                     <span class="kt-widget17__desc">
                     <?= $count_buku;?> Buku
@@ -108,7 +108,7 @@
                         </g>
                       </svg> </span>
                     <span class="kt-widget17__subtitle">
-                      <a href="#">Pinjam</a>
+                      <a href="transaksi">Pinjam</a>
                     </span>
                     <span class="kt-widget17__desc">
                     <?= $count_pinjam;?> Peminjaman
@@ -127,7 +127,7 @@
                         </g>
                       </svg> </span>
                     <span class="kt-widget17__subtitle">
-                      <a href="#">Pengembalian</a>
+                      <a href="transaksi/kembali">Pengembalian</a>
                     </span>
                     <span class="kt-widget17__desc">
                     <?= $count_kembali;?> Pengembalian

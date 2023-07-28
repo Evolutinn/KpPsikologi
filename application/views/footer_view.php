@@ -2,26 +2,6 @@
 
 
 
-<!-- begin:: Footer -->
-<div class="kt-footer  kt-grid__item kt-grid kt-grid--desktop kt-grid--ver-desktop" id="kt_footer">
-  <div class="kt-container  kt-container--fluid ">
-    <div class="kt-footer__copyright">
-      Copyright © 2023 Sistem Informasi Perpustakaan
-    </div>
-    <div class="kt-footer__menu">
-      <a href="#" target="_blank" class="kt-footer__menu-link kt-link">About</a>
-      <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Team</a>
-      <a href="#" target="_blank" class="kt-footer__menu-link kt-link">Contact</a>
-    </div>
-  </div>
-</div>
-
-<!-- end:: Footer -->
-</div>
-</div>
-</div>
-
-<!-- end:: Page -->
 
 
 <!-- begin::Scrolltop -->
@@ -37,7 +17,6 @@
 
 <!--begin:: Vendor Plugins -->
 
-<script src="<?php echo base_url(); ?>assets/plugins/general/jquery/dist/jquery.js" type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/general/popper.js/dist/umd/popper.js"
   type="text/javascript"></script>
 <script src="<?php echo base_url(); ?>assets/plugins/general/bootstrap/dist/js/bootstrap.min.js"
@@ -257,7 +236,36 @@
 <script src="<?php echo base_url(); ?>assets/plugins/custom/tinymce/themes/mobile/theme.js"
   type="text/javascript"></script>
 
+
+
+    <script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net/js/jquery.dataTables.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-bs4/js/dataTables.bootstrap4.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/js/global/integration/plugins/datatables.init.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-autofill/js/dataTables.autoFill.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-autofill-bs4/js/autoFill.bootstrap4.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/jszip/dist/jszip.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/pdfmake/build/pdfmake.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/pdfmake/build/vfs_fonts.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-buttons/js/dataTables.buttons.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-buttons/js/buttons.colVis.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-buttons/js/buttons.flash.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-buttons/js/buttons.html5.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-buttons/js/buttons.print.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-colreorder/js/dataTables.colReorder.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-keytable/js/dataTables.keyTable.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-responsive/js/dataTables.responsive.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-rowgroup/js/dataTables.rowGroup.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-rowreorder/js/dataTables.rowReorder.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-scroller/js/dataTables.scroller.min.js" type="text/javascript"></script>
+		<script src="<?php echo base_url(); ?>assets/plugins/custom/datatables.net-select/js/dataTables.select.min.js" type="text/javascript"></script>
+
 <!--end:: Vendor Plugins for custom pages -->
+
+
 
 <!--end::Global Theme Bundle -->
 

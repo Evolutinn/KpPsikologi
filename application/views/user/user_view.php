@@ -1,30 +1,36 @@
 <?php if (!defined('BASEPATH'))
     exit('No direct script acess allowed'); ?>
-<div class="content-wrapper">
-  <section class="content-header">
-    <h1>
-      <i class="fa fa-edit" style="color:green"> </i>  Daftar Data User
-    </h1>
-    <ol class="breadcrumb">
-			<li><a href="<?php echo base_url('dashboard');?>"><i class="fa fa-dashboard"></i>&nbsp; Dashboard</a></li>
-			<li class="active"><i class="fa fa-file-text"></i>&nbsp; Daftar Data User</li>
-    </ol>
-  </section>
-  <section class="content">
-	<?php if(!empty($this->session->flashdata())){ echo $this->session->flashdata('pesan');}?>
-	<div class="row">
-	    <div class="col-md-12">
-	        <div class="box box-primary">
-                <div class="box-header with-border">
-                    <a href="user/tambah"><button class="btn btn-primary"><i class="fa fa-plus"> </i> Tambah User</button></a>
 
-                </div>
-				<!-- /.box-header -->
-				<div class="box-body">
-				<div class="table-responsive">
-                    <br/>
-                    <table id="example1" class="table table-bordered table-striped table" width="100%">
-                        <thead>
+							<div class="kt-portlet kt-portlet--mobile">
+								<div class="kt-portlet__head kt-portlet__head--lg">
+									<div class="kt-portlet__head-label">
+										<span class="kt-portlet__head-icon">
+											<i class="kt-font-brand flaticon2-line-chart"></i>
+										</span>
+										<h3 class="kt-portlet__head-title">
+											Data Pengguna
+										</h3>
+									</div>
+									<div class="kt-portlet__head-toolbar">
+										<div class="kt-portlet__head-wrapper">
+											<div class="kt-portlet__head-actions">
+												
+											
+												<a href="user/tambah" class="btn btn-brand btn-elevate btn-icon-sm">
+													<i class="la la-plus"></i>
+													Tambah User
+												</a>
+												
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="kt-portlet__body">
+
+									<!--begin: Datatable -->
+									<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+									<thead>
                             <tr>
                                 <th>No</th>
                                 <th>ID</th>
@@ -60,21 +66,160 @@
                                 <td><?= $isi['telepon'];?></td>
                                 <td><?= $isi['level'];?></td>
                                 <td><?= $isi['alamat'];?></td>
-                                <td style="width:20%;">
-                                    <a href="<?= base_url('user/edit/'.$isi['id_login']);?>"><button class="btn btn-success"><i class="fa fa-edit"></i></button></a>
-                                    <a href="<?= base_url('user/del/'.$isi['id_login']);?>" onclick="return confirm('Anda yakin user akan dihapus ?');">
-									<button class="btn btn-danger"><i class="fa fa-trash"></i></button></a>
-									<a href="<?= base_url('user/detail/'.$isi['id_login']);?>" target="_blank"><button class="btn btn-primary">
-										<i class="fa fa-print"></i> Cetak Kartu</button></a>
-                                </td>
+                               <td></td>
                             </tr>
                         <?php $no++;}?>
                         </tbody>
-                    </table>
-			    </div>
-			    </div>
-	        </div>
-    	</div>
-    </div>
-</section>
-</div>
+
+									<!--end: Datatable -->
+								</div>
+							</div>
+
+
+
+
+<script>
+	"use strict";
+var KTDatatablesBasicScrollable = function() {
+
+	var initTable1 = function() {
+		var table = $('#kt_table_1');
+
+		// begin first table
+		table.DataTable({
+			scrollY: '50vh',
+			scrollX: true,
+			scrollCollapse: true,
+			columnDefs: [
+				{
+					targets: -1,
+					title: 'Actions',
+					orderable: false,
+					render: function(data, type, full, meta) {
+						return `
+                        <span class="dropdown">
+                            <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" data-toggle="dropdown" aria-expanded="true">
+                              <i class="la la-ellipsis-h"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="<?= base_url('user/edit/'.$isi['id_login']);?>"><i class="la la-edit"></i> Edit</a>
+                                <a class="dropdown-item" href="<?= base_url('user/del/'.$isi['id_login']);?>" onclick="return confirm('Anda yakin user akan dihapus ?');"><i class="la la-trash"></i> Hapus</a>
+                                <a class="dropdown-item" href="<?= base_url('user/detail/'.$isi['id_login']);?>"><i class="la la-print"></i>Cetak</a>
+
+								
+								
+                            </div>
+                        </span>
+                        <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
+                          <i class="la la-edit"></i>
+                        </a>`;
+					},
+				},
+				{
+					targets: 8,
+					render: function(data, type, full, meta) {
+						var status = {
+							1: {'title': 'Pending', 'class': 'kt-badge--brand'},
+							2: {'title': 'Delivered', 'class': ' kt-badge--danger'},
+							3: {'title': 'Canceled', 'class': ' kt-badge--primary'},
+							4: {'title': 'Success', 'class': ' kt-badge--success'},
+							5: {'title': 'Info', 'class': ' kt-badge--info'},
+							6: {'title': 'Danger', 'class': ' kt-badge--danger'},
+							7: {'title': 'Warning', 'class': ' kt-badge--warning'},
+						};
+						if (typeof status[data] === 'undefined') {
+							return data;
+						}
+						return '<span class="kt-badge ' + status[data].class + ' kt-badge--inline kt-badge--pill">' + status[data].title + '</span>';
+					},
+				},
+				{
+					targets: 9,
+					render: function(data, type, full, meta) {
+						var status = {
+							1: {'title': 'Online', 'state': 'danger'},
+							2: {'title': 'Retail', 'state': 'primary'},
+							3: {'title': 'Direct', 'state': 'success'},
+						};
+						if (typeof status[data] === 'undefined') {
+							return data;
+						}
+						return '<span class="kt-badge kt-badge--' + status[data].state + ' kt-badge--dot"></span>&nbsp;' +
+							'<span class="kt-font-bold kt-font-' + status[data].state + '">' + status[data].title + '</span>';
+					},
+				},
+			],
+		});
+	};
+
+	var initTable2 = function() {
+		var table = $('#kt_table_2');
+
+		// begin second table
+		table.DataTable({
+			scrollY: '50vh',
+			scrollX: true,
+			scrollCollapse: true,
+			createdRow: function(row, data, index) {
+				var status = {
+					1: {'title': 'Pending', 'class': 'kt-badge--brand'},
+					2: {'title': 'Delivered', 'class': ' kt-badge--danger'},
+					3: {'title': 'Canceled', 'class': ' kt-badge--primary'},
+					4: {'title': 'Success', 'class': ' kt-badge--success'},
+					5: {'title': 'Info', 'class': ' kt-badge--info'},
+					6: {'title': 'Danger', 'class': ' kt-badge--danger'},
+					7: {'title': 'Warning', 'class': ' kt-badge--warning'},
+				};
+				var badge = '<span class="kt-badge ' + status[data[18]].class + ' kt-badge--inline kt-badge--pill">' + status[data[18]].title + '</span>';
+				row.getElementsByTagName('td')[18].innerHTML = badge;
+
+				status = {
+					1: {'title': 'Online', 'state': 'danger'},
+					2: {'title': 'Retail', 'state': 'primary'},
+					3: {'title': 'Direct', 'state': 'success'},
+				};
+				badge = '<span class="kt-badge kt-badge--' + status[data[19]].state + ' kt-badge--dot"></span>&nbsp;' +
+					'<span class="kt-font-bold kt-font-' + status[data[19]].state + '">' + status[data[19]].title + '</span>';
+				row.getElementsByTagName('td')[19].innerHTML = badge;
+			},
+			columnDefs: [
+				{
+					targets: -1,
+					title: 'Actions',
+					orderable: false,
+					render: function(data, type, full, meta) {
+						return `
+                        <span class="dropdown">
+                            <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" data-toggle="dropdown" aria-expanded="true">
+                              <i class="la la-ellipsis-h"></i>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <a class="dropdown-item" href="#"><i class="la la-edit"></i> Edit Details</a>
+                                <a class="dropdown-item" href="#"><i class="la la-leaf"></i> Update Status</a>
+                                <a class="dropdown-item" href="#"><i class="la la-print"></i> Generate Report</a>
+                            </div>
+                        </span>
+                        <a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" title="View">
+                          <i class="la la-edit"></i>
+                        </a>`;
+					},
+				}],
+		});
+	};
+
+	return {
+
+		//main function to initiate the module
+		init: function() {
+			initTable1();
+			initTable2();
+		},
+
+	};
+
+}();
+
+jQuery(document).ready(function() {
+	KTDatatablesBasicScrollable.init();
+});
+</script>
