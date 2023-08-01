@@ -259,7 +259,7 @@
 
                             <!--begin: Head -->
                             <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x"
-                                style="background-image: url(assets/media/misc/bg-1.jpg)">
+                                style="background-image: url('<?php echo base_url();?>assets/media/misc/bg-1.jpg')">
                                 <div class="kt-user-card__avatar">
                                     <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
 

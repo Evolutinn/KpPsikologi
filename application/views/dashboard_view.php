@@ -1,9 +1,14 @@
 <?php defined('BASEPATH') or exit('No direct script access allowed'); ?>
 
-<?php if($this->session->userdata('level') == 'Anggota'){ redirect(base_url('transaksi'));}?>
+<?php if ($this->session->userdata('level') == 'Anggota') {
+  redirect(base_url('transaksi'));
+} ?>
+
+
+
+
 
 <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
-
   <!-- begin:: Content Head -->
   <div class="kt-subheader  kt-grid__item" id="kt_subheader">
     <div class="kt-container  kt-container--fluid ">
@@ -54,20 +59,18 @@
                 <div class="kt-widget17__items">
                   <div class="kt-widget17__item">
                     <span class="kt-widget17__icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                        height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <rect x="0" y="0" width="24" height="24" />
-                          <path
-                            d="M6,2 L18,2 C19.6568542,2 21,3.34314575 21,5 L21,19 C21,20.6568542 19.6568542,22 18,22 L6,22 C4.34314575,22 3,20.6568542 3,19 L3,5 C3,3.34314575 4.34314575,2 6,2 Z M12,11 C13.1045695,11 14,10.1045695 14,9 C14,7.8954305 13.1045695,7 12,7 C10.8954305,7 10,7.8954305 10,9 C10,10.1045695 10.8954305,11 12,11 Z M7.00036205,16.4995035 C6.98863236,16.6619875 7.26484009,17 7.4041679,17 C11.463736,17 14.5228466,17 16.5815,17 C16.9988413,17 17.0053266,16.6221713 16.9988413,16.5 C16.8360465,13.4332455 14.6506758,12 11.9907452,12 C9.36772908,12 7.21569918,13.5165724 7.00036205,16.4995035 Z"
-                            fill="#000000" />
-                        </g>
-                      </svg> </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon points="0 0 24 0 24 24 0 24"/>
+        <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+        <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero"/>
+    </g>
+</svg> </span>
                     <span class="kt-widget17__subtitle">
                       <a href="user">Anggota</a>
                     </span>
                     <span class="kt-widget17__desc">
-                    <?= $count_pengguna;?> Anggota
+                      <?= $count_pengguna; ?> Anggota
                     </span>
                   </div>
                   <div class="kt-widget17__item">
@@ -85,33 +88,28 @@
                         </g>
                       </svg> </span>
                     <span class="kt-widget17__subtitle">
-                      <a href="data">Jenis Buku</a>
+                      <a href="data">Kategori Buku</a>
                     </span>
                     <span class="kt-widget17__desc">
-                    <?= $count_buku;?> Buku
+                      <?= $count_kategori; ?> Kategori
                     </span>
                   </div>
                 </div>
                 <div class="kt-widget17__items">
                   <div class="kt-widget17__item">
                     <span class="kt-widget17__icon">
-                      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                        height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                          <polygon points="0 0 24 0 24 24 0 24" />
-                          <path
-                            d="M18,8 L16,8 C15.4477153,8 15,7.55228475 15,7 C15,6.44771525 15.4477153,6 16,6 L18,6 L18,4 C18,3.44771525 18.4477153,3 19,3 C19.5522847,3 20,3.44771525 20,4 L20,6 L22,6 C22.5522847,6 23,6.44771525 23,7 C23,7.55228475 22.5522847,8 22,8 L20,8 L20,10 C20,10.5522847 19.5522847,11 19,11 C18.4477153,11 18,10.5522847 18,10 L18,8 Z M9,11 C6.790861,11 5,9.209139 5,7 C5,4.790861 6.790861,3 9,3 C11.209139,3 13,4.790861 13,7 C13,9.209139 11.209139,11 9,11 Z"
-                            fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                          <path
-                            d="M0.00065168429,20.1992055 C0.388258525,15.4265159 4.26191235,13 8.98334134,13 C13.7712164,13 17.7048837,15.2931929 17.9979143,20.2 C18.0095879,20.3954741 17.9979143,21 17.2466999,21 C13.541124,21 8.03472472,21 0.727502227,21 C0.476712155,21 -0.0204617505,20.45918 0.00065168429,20.1992055 Z"
-                            fill="#000000" fill-rule="nonzero" />
-                        </g>
-                      </svg> </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <polygon points="0 0 24 0 24 24 0 24"/>
+        <path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3"/>
+        <path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000"/>
+    </g>
+</svg> </span>
                     <span class="kt-widget17__subtitle">
                       <a href="transaksi">Pinjam</a>
                     </span>
                     <span class="kt-widget17__desc">
-                    <?= $count_pinjam;?> Peminjaman
+                      <?= $count_pinjam; ?> Peminjaman
                     </span>
                   </div>
                   <div class="kt-widget17__item">
@@ -130,7 +128,7 @@
                       <a href="transaksi/kembali">Pengembalian</a>
                     </span>
                     <span class="kt-widget17__desc">
-                    <?= $count_kembali;?> Pengembalian
+                      <?= $count_kembali; ?> Pengembalian
                     </span>
                   </div>
                 </div>
@@ -154,11 +152,25 @@
           </div>
           <div class="kt-portlet__body kt-portlet__body--fluid">
             <div class="kt-widget20">
+              <a href="data">
               <div class="kt-widget20__content kt-portlet__space-x">
-                <span class="kt-widget20__number kt-font-brand"><?= $count_buku;?> Buku</span>
+                <span class="kt-widget20__number kt-font-brand">
+                  <?= $count_buku; ?> Buku
+                </span>
+                <span>Klik Halaman Buku</span>
               </div>
+              </a>
               <div class="kt-widget20__chart" style="height:130px;">
-              <svg xmlns="http://www.w3.org/2000/svg" height="6em" viewBox="0 0 448 512" style="margin-left:30px;" ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#2a549d}</style><path d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" height="6em" viewBox="0 0 448 512"
+                  style="margin-left:30px;"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                  <style>
+                    svg {
+                      fill: #2a549d
+                    }
+                  </style>
+                  <path
+                    d="M96 0C43 0 0 43 0 96V416c0 53 43 96 96 96H384h32c17.7 0 32-14.3 32-32s-14.3-32-32-32V384c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H384 96zm0 384H352v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48H336c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z" />
+                </svg>
               </div>
             </div>
           </div>
@@ -178,11 +190,17 @@
           </div>
           <div class="kt-portlet__body kt-portlet__body--fluid">
             <div class="kt-widget20">
-              <div class="kt-widget20__content kt-portlet__space-x">
-                <span class="kt-widget20__number kt-font-danger">jml semua rak (...)</span>
-              </div>
+              <a href="data/rak">
+                <div class="kt-widget20__content kt-portlet__space-x">
+                  <span class="kt-widget20__number kt-font-brand">
+                    <?= $count_rak; ?> Rak
+                  </span>
+                  <span>Klik Halaman Rak</span>
+                </div>
+              </a>
               <div class="kt-widget20__chart" style="height:130px;">
-              <svg xmlns="http://www.w3.org/2000/svg" height="6em" viewBox="0 0 448 512" ><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 32v448h448V32H0zm358.4 179.2h-89.6v89.6h-89.6v89.6H89.6V121.6h268.8v89.6z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" height="6em" viewBox="0 0 512 512"
+                style="margin-left:30px;"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z"/></svg>
               </div>
             </div>
           </div>
@@ -192,5 +210,5 @@
       </div>
     </div>
 
-</div>
+  </div>
 </div>

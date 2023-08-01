@@ -34,6 +34,8 @@ class Dashboard extends CI_Controller {
 		$this->data['title_web'] = 'Dashboard ';
 		$this->data['count_pengguna']=$this->db->query("SELECT * FROM tbl_login")->num_rows();
 		$this->data['count_buku']=$this->db->query("SELECT * FROM tbl_buku")->num_rows();
+		$this->data['count_kategori']=$this->db->query("SELECT * FROM tbl_kategori")->num_rows();
+		$this->data['count_rak']=$this->db->query("SELECT * FROM tbl_rak")->num_rows();
 		$this->data['count_pinjam']=$this->db->query("SELECT * FROM tbl_pinjam WHERE status = 'Dipinjam'")->num_rows();
 		$this->data['count_kembali']=$this->db->query("SELECT * FROM tbl_pinjam WHERE status = 'Di Kembalikan'")->num_rows();
 		$this->load->view('header_view',$this->data);
