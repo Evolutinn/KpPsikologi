@@ -226,22 +226,30 @@ class Transaksi extends CI_Controller {
 					$s = $denda->row();
 					echo $s->denda;
 				}else{
-					$date1 = date('Ymd');
-					$date2 = preg_replace('/[^0-9]/','',$isi['tgl_balik']);
-					$diff = $date2 - $date1;
-					if($diff >= 0 )
-					{
+					$date1 = date('y-m-d');
+					$date2 = preg_replace('/[^0-9]/', '', $isi['tgl_balik']);
+					$datetime1 = new DateTime($date1);
+					$datetime2 = new DateTime($date2);
+
+					// Periksa apakah tanggal pengembalian lebih besar atau sama dengan tanggal sekarang
+					if ($datetime2 >= $datetime1) {
 						$harga_denda = 0;
 						$lama_waktu = 0;
-					}else{
-						$dd = $this->M_Admin->get_tableid_edit('tbl_biaya_denda','stat','Aktif'); 
-						$harga_denda = $jml*($dd->harga_denda*abs($diff));
-						$lama_waktu = abs($diff);
+					} else {
+						$interval = $datetime2->diff($datetime1);
+						if ($interval->days > 0) {
+							$dd = $this->M_Admin->get_tableid_edit('tbl_biaya_denda', 'stat', 'Aktif');
+							$harga_denda = $jml * ($dd->harga_denda * abs($interval->days));
+							$lama_waktu = abs($interval->days);
+						} else {
+							$harga_denda = 0;
+							$lama_waktu = 0;
+						}
 					}
-				}
 				
+				}
 			}
-
+			
 			$data = array(
 				'status' => 'Di Kembalikan', 
 				'tgl_kembali'  => date('Y-m-d'),

@@ -67,43 +67,51 @@
 				<tbody>
 					<?php $no = 1;
 					foreach ($user as $isi) { ?>
-						<tr>
-							<td>
-								<?= $no; ?>
-							</td>
-							<td>
-								<?= $isi['anggota_id']; ?>
-							</td>
-							<td>
-								<center>
-									<?php if (!empty($isi['foto'] !== "-")) { ?>
-										<img src="<?php echo base_url(); ?>assets_style/image/<?php echo $isi['foto']; ?>"
-											alt="#" class="img-responsive" style="height:auto;width:100px;" />
-									<?php } else { ?>
-										<!--<img src="" alt="#" class="user-image" style="border:2px solid #fff;"/>-->
-										<i class="fa fa-user fa-3x" style="color:#333;"></i>
-									<?php } ?>
-								</center>
-							</td>
-							<td>
-								<?= $isi['nama']; ?>
-							</td>
-							<td>
-								<?= $isi['user']; ?>
-							</td>
-							<td>
-								<?= $isi['jenkel']; ?>
-							</td>
-							<td>
-								<?= $isi['telepon']; ?>
-							</td>
-							<td>
-								<?= $isi['level']; ?>
-							</td>
-							<td>
-								<?= $isi['alamat']; ?>
-							</td>
-							<td></td>
+
+						<?php
+						if ($no % 2 == 1) {
+							echo '<tr class="table-success">';
+						} else {
+							echo '<tr class="table-brand">';
+						}
+						?>
+
+						<td>
+							<?= $no; ?>
+						</td>
+						<td>
+							<?= $isi['anggota_id']; ?>
+						</td>
+						<td>
+							<center>
+								<?php if (!empty($isi['foto'] !== "-")) { ?>
+									<img src="<?php echo base_url(); ?>assets_style/image/<?php echo $isi['foto']; ?>" alt="#"
+										class="img-responsive" style="height:auto;width:100px;" />
+								<?php } else { ?>
+									<!--<img src="" alt="#" class="user-image" style="border:2px solid #fff;"/>-->
+									<i class="fa fa-user fa-3x" style="color:#333;"></i>
+								<?php } ?>
+							</center>
+						</td>
+						<td>
+							<?= $isi['nama']; ?>
+						</td>
+						<td>
+							<?= $isi['user']; ?>
+						</td>
+						<td>
+							<?= $isi['jenkel']; ?>
+						</td>
+						<td>
+							<?= $isi['telepon']; ?>
+						</td>
+						<td>
+							<?= $isi['level']; ?>
+						</td>
+						<td>
+							<?= $isi['alamat']; ?>
+						</td>
+						<td></td>
 						</tr>
 						<?php $no++;
 					} ?>

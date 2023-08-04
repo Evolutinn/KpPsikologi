@@ -31,7 +31,7 @@
 						<i class="kt-font-brand flaticon2-open-text-book"></i>
 					</span>
 					<h3 class="kt-portlet__head-title">
-						Kategori
+						Tabel Kategori
 					</h3>
 				</div>
 				<div class="kt-portlet__head-toolbar">
@@ -118,10 +118,10 @@
 		<div class="kt-portlet__body">
 
 			<!--begin: Datatable -->
-			<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1">
+			<table class="table table-striped- table-bordered table-hover table-checkable" id="kt_table_1" >
 				<thead>
 					<tr>
-						<th>No</th>
+						<th >No</th>
 						<th>Kategori</th>
 						<th>Aksi</th>
 					</tr>
@@ -129,8 +129,15 @@
 				<tbody>
 					<?php $no = 1;
 					foreach ($kategori->result_array() as $isi) { ?>
-						<tr>
-							<td>
+
+						<?php
+						if ($no%2 == 1) {
+							echo '<tr class="table-success">';
+						} else {
+							echo '<tr class="table-brand">';
+						}
+						?>
+							<td >
 								<?= $no; ?>
 							</td>
 							<td>

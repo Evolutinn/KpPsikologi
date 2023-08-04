@@ -144,25 +144,29 @@
 													echo $this->M_Admin->rp($total_denda->denda);
 													
 												}else{
-													$jml = $this->db->query("SELECT * FROM tbl_pinjam WHERE pinjam_id = '$pinjam_id'")->num_rows();			
-													$date1 = date('Ymd');
-													$date2 = preg_replace('/[^0-9]/','',$pinjam->tgl_balik);
-													$diff = $date1 - $date2;
-													/*	$datetime1 = new DateTime($date1);
-														$datetime2 = new DateTime($date2);
-														$difference = $datetime1->diff($datetime2); */
-													// echo $difference->days;
-													if($diff > 0 )
-													{
-														echo $diff.' hari';
-														$dd = $this->M_Admin->get_tableid_edit('tbl_biaya_denda','stat','Aktif'); 
-														echo '<p style="color:red;font-size:18px;">'.$this->M_Admin->rp($jml*($dd->harga_denda*$diff)).' 
-														</p><small style="color:#333;">* Untuk '.$jml.' Buku</small>';
-													}else{
-														echo '<p style="color:green;text-align:center;">
-														Tidak Ada Denda</p>';
-													}
+													$jml = $this->db->query("SELECT * FROM tbl_pinjam WHERE pinjam_id = '$pinjam_id'")->num_rows();
+											$date1 = date('y-m-d');
+											$date2 = preg_replace('/[^0-9]/', '', $pinjam->tgl_balik);
+											$datetime1 = new DateTime($date1);
+											$datetime2 = new DateTime($date2);
+
+											// Periksa apakah tanggal pengembalian lebih besar atau sama dengan tanggal sekarang
+											if ($datetime2 >= $datetime1) {
+												echo '<p style="color:green;">Tidak Ada Denda</p>';
+											} else {
+												$interval = $datetime2->diff($datetime1);
+												if ($interval->days > 0) {
+													echo  $interval->days . " hari";
+													$dd = $this->M_Admin->get_tableid_edit('tbl_biaya_denda', 'stat', 'Aktif');
+													echo '<p style="color:red;font-size:18px;">
+                    ' . $this->M_Admin->rp($jml * ($dd->harga_denda * $interval->days)) . ' 
+                    </p><small style="color:#333;">* Untuk ' . $jml . ' Buku</small>';
+												} else {
+													echo '<p style="color:green;text-align:center;">
+							Tidak Ada Denda</p>';
 												}
+												}
+											}
 											?>
 										</td>
 									</tr>
