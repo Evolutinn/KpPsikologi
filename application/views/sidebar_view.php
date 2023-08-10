@@ -3,7 +3,8 @@
 <div id="kt_header_mobile" class="kt-header-mobile  kt-header-mobile--fixed ">
     <div class="kt-header-mobile__logo">
         <a href="#">
-            <img alt="Logo" src="assets/media/logos/logo-light.png" />
+            <img alt="Logo" src="<?php echo base_url(); ?>assets/media/logos/logo-light.png" />
+            
         </a>
     </div>
     <div class="kt-header-mobile__toolbar">
@@ -277,7 +278,8 @@
                                 ?>
                                 <span class="kt-header__topbar-welcome kt-hidden-mobile">Welcome,</span>
                                 <span class="kt-header__topbar-username kt-hidden-mobile"><?php echo $d->nama; ?></span>
-                                <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
+                                <img class="kt-hidden" alt="Pic" src="<?php echo base_url(); ?>assets/media/users/300_25.jpg" />
+                                
                                 
 
                                 <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
@@ -289,9 +291,11 @@
                         <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
 
                             <!--begin: Head -->
-                            <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(assets/media/misc/bg-1.jpg)">
-                                <div class="kt-user-card__avatar">
-                                    <img class="kt-hidden" alt="Pic" src="assets/media/users/300_25.jpg" />
+                            
+                            <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(<?php echo base_url('assets/media/misc/bg-1.jpg'); ?>);">
+                            <div class="kt-user-card__avatar">
+                                    <img class="kt-hidden" alt="Pic" src="<?php echo base_url(); ?>assets/media/users/300_25.jpg" />
+                                    
                                    
                                     <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
                                     <span class="kt-badge kt-badge--lg kt-badge--rounded kt-badge--bold kt-font-success"><img src="<?php echo base_url(); ?>assets_style/image/<?php echo $d->foto; ?>" alt="#"></span>
