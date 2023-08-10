@@ -7,7 +7,7 @@
 													 background-repeat: no-repeat;">
 					<div class="kt-invoice__container">
 						<div class="kt-invoice__brand">
-							<h1 class="kt-invoice__title">DETAIL Pengembalian Buku</h1>
+							<h1 class="kt-invoice__title">DETAIL PENGEMBAILAN BUKU</h1>
 							<div href="#" class="kt-invoice__logo">
 								<a href="#"><img src="<?php echo base_url(); ?>assets/media/bg/logo-uir.png"
 										style="width:50px;"></a>
