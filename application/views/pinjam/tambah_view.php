@@ -115,7 +115,7 @@ $d = $this->db->query("SELECT * FROM tbl_login WHERE id_login = '$idbo'")->row()
 							placeholder="Contoh ID Buku : BK001" type="text" value="">
 						<div class="input-group-append">
 							<button class="btn btn-secondary" type="button" data-toggle="modal"
-								data-target="#TableBuku">Go!</button>
+								data-target="#kt_modal_4">Cari!</button>
 						</div>
 					</div>
 
@@ -141,7 +141,7 @@ $d = $this->db->query("SELECT * FROM tbl_login WHERE id_login = '$idbo'")->row()
 								disabled>Submit</button>
 
 							<a href="<?= base_url('transaksi'); ?>" class="btn btn-danger btn-md">Kembali</a>
-							
+
 							<!-- script disable button < 1 && > 5 -->
 							<script>
 								var lamaInput = document.getElementById("lamaInput");
@@ -175,15 +175,16 @@ $d = $this->db->query("SELECT * FROM tbl_login WHERE id_login = '$idbo'")->row()
 <!--end::Portlet-->
 </div>
 
-<!--modal import -->
-<div class="modal fade" id="TableBuku">
-	<div class="modal-dialog" style="width:80%;">
+
+<div class="modal fade" id="kt_modal_4">
+	<div class="modal-dialog modal-lg">
 		<div class="modal-content">
 			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Tambah Buku</h5>
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					<span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title">Add Buku</h4>
+				</button>
 			</div>
+			<div class="modal-body">
 			<div id="modal_body" class="modal-body fileSelection1">
 				<table id="example1" class="table table-bordered table-striped">
 					<thead>
@@ -223,32 +224,39 @@ $d = $this->db->query("SELECT * FROM tbl_login WHERE id_login = '$idbo'")->row()
 								<td>
 									<?= $isi['tgl_masuk']; ?>
 								</td>
-								<td style="width:17%">
+								<td style="text-align:center;">
+								<span class="dropdown">
+								<a href="#" class="btn btn-sm btn-clean btn-icon btn-icon-md" data-toggle="dropdown" aria-expanded="true">
+									<i class="la la-bars"></i>
+								</a>
+								<div class="dropdown-menu dropdown-menu-right">
 									<button class="btn btn-primary" id="Select_File2" data_id="<?= $isi['buku_id']; ?>">
 										<i class="fa fa-check"> </i> Pilih
 									</button>
 									<a href="<?= base_url('data/bukudetail/' . $isi['id_buku']); ?>" target="_blank">
 										<button class="btn btn-success"><i class="fa fa-sign-in"></i> Detail</button></a>
+										</div>
+								</span>
 								</td>
+
 							</tr>
 							<?php $no++;
 						} ?>
 					</tbody>
 				</table>
+
 			</div>
 			<div class="modal-footer">
-				<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			</div>
 		</div>
-		<!-- /.modal-content -->
 	</div>
-	<!-- /.modal-dialog -->
 </div>
-<!-- /.modal -->
+
 <script>
 	$(".fileSelection1 #Select_File2").click(function (e) {
 		document.getElementsByName('buku_id')[0].value = $(this).attr("data_id");
-		$('#TableBuku').modal('hide');
+		$('#kt_modal_4').modal('hide');
 		$.ajax({
 			type: "POST",
 			url: "<?php echo base_url('transaksi/buku'); ?>",
@@ -391,3 +399,35 @@ $d = $this->db->query("SELECT * FROM tbl_login WHERE id_login = '$idbo'")->row()
 		});
 	});
 </script>
+
+
+<!-- <script>
+	"use strict";
+	var KTDatatablesBasicScrollable = function() {
+
+		var initTable1 = function() {
+			var table = $('#example1');
+
+			// begin first table
+			table.DataTable({
+				scrollY: '50vh',
+				scrollX: true,
+				scrollCollapse: true,
+			});
+		};
+
+		return {
+
+			//main function to initiate the module
+			init: function() {
+				initTable1();
+			},
+
+		};
+
+	}();
+
+	jQuery(document).ready(function() {
+		KTDatatablesBasicScrollable.init();
+	});
+</script> -->
