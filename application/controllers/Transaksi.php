@@ -54,6 +54,29 @@ class Transaksi extends CI_Controller {
 		$this->load->view('footer_view',$this->data);
 	}
 
+
+	public function booking()
+	{
+		$this->data['title_web'] = 'Data Pengembalian Buku ';
+		$this->data['idbo'] = $this->session->userdata('ses_id');
+
+		if ($this->session->userdata('level') == 'Anggota') {
+			$this->data['pinjam'] = $this->db->query("SELECT DISTINCT `pinjam_id`, `anggota_id`, 
+				`status`, `tgl_pinjam`, `lama_pinjam`, `tgl_balik`, `tgl_kembali` 
+				FROM tbl_pinjam WHERE anggota_id = ? AND status = 'Menunggu Approve' 
+				ORDER BY id_pinjam DESC", array($this->session->userdata('anggota_id')));
+		} else {
+			$this->data['pinjam'] = $this->db->query("SELECT DISTINCT `pinjam_id`, `anggota_id`, 
+				`status`, `tgl_pinjam`, `lama_pinjam`, `tgl_balik`, `tgl_kembali` 
+				FROM tbl_pinjam WHERE status = 'Menunggu Approve' ORDER BY id_pinjam DESC");
+		}
+
+		$this->load->view('header_view', $this->data);
+		$this->load->view('sidebar_view', $this->data);
+		$this->load->view('booking/booking_view', $this->data);
+		$this->load->view('footer_view', $this->data);
+	}
+
 	public function kembali()
 	{	
 		$this->data['title_web'] = 'Data Pengembalian Buku ';
@@ -74,6 +97,35 @@ class Transaksi extends CI_Controller {
 		$this->load->view('sidebar_view',$this->data);
 		$this->load->view('kembali/home',$this->data);
 		$this->load->view('footer_view',$this->data);
+	}
+
+
+	public function approve($pinjam_id)
+	{
+		// Update status peminjaman menjadi "Dipinjam"
+		$data = array(
+			'status' => 'Dipinjam',
+			'tgl_pinjam' => date('Y-m-d'), // Tanggal pinjam diubah menjadi tanggal saat ini
+		);
+		$this->db->where('pinjam_id', $pinjam_id);
+		$this->db->update('tbl_pinjam', $data);
+
+		// Mendapatkan lama pinjam dari database
+		$pinjam = $this->db->get_where('tbl_pinjam', array('pinjam_id' => $pinjam_id))->row();
+		$lama_pinjam = $pinjam->lama_pinjam;
+
+		// Menghitung tanggal pengembalian berdasarkan lama pinjam
+		$tgl_kembali = date('Y-m-d', strtotime('+' . $lama_pinjam . ' days'));
+
+		// Update tanggal pengembalian
+		$data_kembali = array(
+			'tgl_balik' => $tgl_kembali,
+		);
+		$this->db->where('pinjam_id', $pinjam_id);
+		$this->db->update('tbl_pinjam', $data_kembali);
+
+		$this->session->set_flashdata('pesan', '<div class="alert alert-success">Peminjaman berhasil di-approve!</div>');
+		redirect(base_url('transaksi'));
 	}
 
 
@@ -176,7 +228,7 @@ class Transaksi extends CI_Controller {
 					'pinjam_id'=>htmlentities($post['nopinjam']), 
 					'anggota_id'=>htmlentities($post['anggota_id']), 
 					'buku_id' => $isi['id'], 
-					'status' => 'Dipinjam', 
+					'status' => 'Menunggu Approve', 
 					'tgl_pinjam' => htmlentities($post['tgl']), 
 					'lama_pinjam' => htmlentities($post['lama']), 
 					'tgl_balik'  => $tgl2, 
@@ -512,5 +564,31 @@ class Transaksi extends CI_Controller {
         }
         return -1;
     }
+
+
+	public function perpanjangan($pinjam_id)
+	{
+		// Update the 'perpanjang' column to 1
+		$data = array(
+			'perpanjang' => 1
+		);
+	
+		// Add 2 days to the existing tgl_balik
+		$this->db->select('tgl_balik');
+		$this->db->where('pinjam_id', $pinjam_id);
+		$tgl_balik_query = $this->db->get('tbl_pinjam')->row();
+	
+		$tgl_balik_new = date('Y-m-d', strtotime('+2 days', strtotime($tgl_balik_query->tgl_balik)));
+		$data['tgl_balik'] = $tgl_balik_new;
+	
+		// Update the database
+		$this->db->where('pinjam_id', $pinjam_id);
+		$this->db->update('tbl_pinjam', $data);
+	
+		$this->session->set_flashdata('pesan', '<div class="alert alert-success">Perpanjangan berhasil dilakukan!</div>');
+		redirect(base_url('transaksi'));
+	}
+
+
 
 }
