@@ -21,7 +21,6 @@
 								<i class="fa fa-plus"> </i> Tambah Pinjam</button></a><?php } ?>
 
 
-
 				</div>
 			</div>
 		</div>
@@ -68,30 +67,30 @@
 								echo $this->M_Admin->rp($total_denda->denda);
 							} else {
 								$jml = $this->db->query("SELECT * FROM tbl_pinjam WHERE pinjam_id = '$pinjam_id'")->num_rows();
-					$date1 = date('y-m-d');
-					$date2 = preg_replace('/[^0-9]/', '', $isi['tgl_balik']);
-					$datetime1 = new DateTime($date1);
-					$datetime2 = new DateTime($date2);
+								$date1 = date('y-m-d');
+								$date2 = preg_replace('/[^0-9]/', '', $isi['tgl_balik']);
+								$datetime1 = new DateTime($date1);
+								$datetime2 = new DateTime($date2);
 
-					// Periksa apakah tanggal pengembalian lebih besar atau sama dengan tanggal sekarang
-					if ($datetime2 >= $datetime1) {
-						echo '<p style="color:green;">Tidak Ada Denda</p>';
-					} else {
-						$interval = $datetime2->diff($datetime1);
-						if ($interval->days > 0) {
-							echo  $interval->days . " hari";
-							$dd = $this->M_Admin->get_tableid_edit('tbl_biaya_denda', 'stat', 'Aktif');
-							echo '<p style="color:red;font-size:18px;">
+								// Periksa apakah tanggal pengembalian lebih besar atau sama dengan tanggal sekarang
+								if ($datetime2 >= $datetime1) {
+									echo '<p style="color:green;">Tidak Ada Denda</p>';
+								} else {
+									$interval = $datetime2->diff($datetime1);
+									if ($interval->days > 0) {
+										echo  $interval->days . " hari";
+										$dd = $this->M_Admin->get_tableid_edit('tbl_biaya_denda', 'stat', 'Aktif');
+										echo '<p style="color:red;font-size:18px;">
                     ' . $this->M_Admin->rp($jml * ($dd->harga_denda * $interval->days)) . ' 
                     </p><small style="color:#333;">* Untuk ' . $jml . ' Buku</small>';
-						} else {
-							echo '<p style="color:green;text-align:center;">
+									} else {
+										echo '<p style="color:green;text-align:center;">
 							Tidak Ada Denda</p>';
-						}
-					}
-				}
+									}
+								}
+							}
 							?>
-							
+
 						</td>
 						<td style="text-align:center;">
 							<span class="dropdown">
@@ -99,32 +98,34 @@
 									<i class="la la-bars"></i>
 								</a>
 								<div class="dropdown-menu dropdown-menu-right">
-    <?php if ($this->session->userdata('level') == 'Petugas') { ?>
-        <?php if ($isi['tgl_kembali'] == '0') { ?>
-            <a class="dropdown-item" href="<?= base_url('transaksi/kembalipinjam/' . $isi['pinjam_id']); ?>" title="pengembalian buku">
-                <i class="la la-sign-out"></i> Kembalikan</a>
-        <?php } else { ?>
-            <a class="dropdown-item" href="javascript:void(0)" title="pengembalian buku">
-                <i class="la la-check"></i> Dikembalikan</a>
-        <?php } ?>
-        <a class="dropdown-item" href="<?= base_url('transaksi/detailpinjam/' . $isi['pinjam_id'] . '?pinjam=yes'); ?>" title="detail pinjam"><i class="la la-eye"></i>Detail Pinjam</a>
-        <a class="dropdown-item" href="<?= base_url('transaksi/prosespinjam?pinjam_id=' . $isi['pinjam_id']); ?>" onclick="return confirm('Anda yakin Peminjaman Ini akan dihapus ?');" title="hapus pinjam">
-            <i class="la la-trash"></i>Hapus Pinjam</a>
-        <!-- Tambahkan tombol Setujui -->
-        <a class="dropdown-item" href="<?= base_url('Transaksi/approve/'.$isi['pinjam_id']); ?>" title="setujui pinjam">
-            <i class="la la-check"></i>Setujui</a>
-        <!-- Tambahkan tombol Tolak -->
-        <a class="dropdown-item" href="<?= base_url('Transaksi/reject/'.$isi['pinjam_id']); ?>" title="tolak pinjam">
-            <i class="la la-times"></i>Tolak</a>
-    <?php } else { ?>
-        <a class="dropdown-item" href="<?= base_url('transaksi/detailpinjam/' . $isi['pinjam_id']); ?>" title="detail pinjam">
-            <i class="la la-eye"></i> Detail Pinjam</a>
-    <?php } ?>
-	<a class="dropdown-item" href="<?= base_url('transaksi/perpanjangan/' . $isi['pinjam_id']); ?>" title="">
-            <i class="la la-eye"></i>Perpanjangan</a>
+									<?php if ($this->session->userdata('level') == 'Petugas') { ?>
+										<?php if ($isi['tgl_kembali'] == '0') { ?>
+											<a class="dropdown-item" href="<?= base_url('transaksi/kembalipinjam/' . $isi['pinjam_id']); ?>" title="pengembalian buku">
+												<i class="la la-sign-out"></i> Kembalikan</a>
+										<?php } else { ?>
+											<a class="dropdown-item" href="javascript:void(0)" title="pengembalian buku">
+												<i class="la la-check"></i> Dikembalikan</a>
+										<?php } ?>
+										<a class="dropdown-item" href="<?= base_url('transaksi/detailpinjam/' . $isi['pinjam_id'] . '?pinjam=yes'); ?>" title="detail pinjam"><i class="la la-eye"></i>Detail Pinjam</a>
+										<a class="dropdown-item" href="<?= base_url('transaksi/prosespinjam?pinjam_id=' . $isi['pinjam_id']); ?>" onclick="return confirm('Anda yakin Peminjaman Ini akan dihapus ?');" title="hapus pinjam">
+											<i class="la la-trash"></i>Hapus Pinjam</a>
+									<?php } else { ?>
+										<a class="dropdown-item" href="<?= base_url('transaksi/detailpinjam/' . $isi['pinjam_id']); ?>" title="detail pinjam">
+											<i class="la la-eye"></i> Detail Pinjam</a>
+										<?php if ($datetime2 >= $datetime1) { ?>
+											<?php if ($isi['perpanjang'] == '0') { ?>
+												<a class="dropdown-item" href="<?= base_url('transaksi/perpanjangan/' . $isi['pinjam_id']); ?>" title="">
+													<i class="la la-battery-2"></i> Perpanjangan
+												</a>
+											<?php } ?>
+										<?php } ?>
 
-</div>
 
+
+									<?php } ?>
+
+
+								</div>
 							</span>
 						</td>
 					</tr>

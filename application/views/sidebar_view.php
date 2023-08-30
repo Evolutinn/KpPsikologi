@@ -67,197 +67,207 @@
                 <div id="kt_aside_menu" class="kt-aside-menu " data-ktmenu-vertical="1" data-ktmenu-scroll="1" data-ktmenu-dropdown-timeout="500">
                     <ul class="kt-menu__nav ">
                         <?php if ($this->session->userdata('level') == 'Petugas') { ?>
-                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == "dashboard") {
-                                                            echo 'kt-menu__item--active';
-                                                        } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('dashboard'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon points="0 0 24 0 24 24 0 24" />
-                                                <path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z" fill="#000000" fill-rule="nonzero" />
-                                                <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">Dashboard</span></a></li>
+                                <li class="kt-menu__item <?php if ($this->uri->uri_string() == "dashboard") {
+                                    echo 'kt-menu__item--active';
+                                } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('dashboard'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <path d="M12.9336061,16.072447 L19.36,10.9564761 L19.5181585,10.8312381 C20.1676248,10.3169571 20.2772143,9.3735535 19.7629333,8.72408713 C19.6917232,8.63415859 19.6104327,8.55269514 19.5206557,8.48129411 L12.9336854,3.24257445 C12.3871201,2.80788259 11.6128799,2.80788259 11.0663146,3.24257445 L4.47482784,8.48488609 C3.82645598,9.00054628 3.71887192,9.94418071 4.23453211,10.5925526 C4.30500305,10.6811601 4.38527899,10.7615046 4.47382636,10.8320511 L4.63,10.9564761 L11.0659024,16.0730648 C11.6126744,16.5077525 12.3871218,16.5074963 12.9336061,16.072447 Z" fill="#000000" fill-rule="nonzero" />
+                                                    <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3" />
+                                                </g>
+                                            </svg></span><span class="kt-menu__link-text">Dashboard</span></a></li>
 
-                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == "user") {
-                                                            echo 'kt-menu__item--active';
-                                                        } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('user'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon points="0 0 24 0 24 24 0 24" />
-                                                <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" />
-                                                <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">Data Penggua</span></a></li>
-                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'data' || $this->uri->uri_string() == 'data/rak' || $this->uri->uri_string() == 'data/kategori') {
-                                                            echo 'kt-menu__item--active kt-menu__item--open';
-                                                        } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
-                                    <span class="kt-menu__link-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <rect fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16" />
-                                                <path d="M13.6855025,18.7082217 C15.9113859,17.8189707 18.682885,17.2495635 22,17 C22,16.9325178 22,13.1012863 22,5.50630526 L21.9999762,5.50630526 C21.9999762,5.23017604 21.7761292,5.00632908 21.5,5.00632908 C21.4957817,5.00632908 21.4915635,5.00638247 21.4873465,5.00648922 C18.658231,5.07811173 15.8291155,5.74261533 13,7 C13,7.04449645 13,10.79246 13,18.2438906 L12.9999854,18.2438906 C12.9999854,18.520041 13.2238496,18.7439052 13.5,18.7439052 C13.5635398,18.7439052 13.6264972,18.7317946 13.6855025,18.7082217 Z" fill="#000000" fill-rule="nonzero" />
-                                            </g>
-                                        </svg>
-                                    </span>
-                                    <span class="kt-menu__link-text">Pustaka</span>
-                                    <i class="kt-menu__ver-arrow la la-angle-right"></i>
-                                </a>
-                                <div class="kt-menu__submenu">
-                                    <span class="kt-menu__arrow"></span>
-                                    <ul class="kt-menu__subnav">
-                                        <li class="kt-menu__item kt-menu__item--parent" aria-haspopup="true">
-                                            <span class="kt-menu__link"><span class="kt-menu__link-text">Pages</span></span>
-                                        </li>
-                                        <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'data') {
-                                                                        echo 'kt-menu__item--active';
-                                                                    } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                            <a href="<?php echo base_url("data"); ?>" class="kt-menu__link kt-menu__toggle">
-                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-                                                <span class="kt-menu__link-text">Data Buku</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-menu__item kt-menu__item--submenu <?php if ($this->uri->uri_string() == 'data/kategori') {
-                                                                                            echo 'kt-menu__item--active';
-                                                                                        } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                            <a href="<?php echo base_url("data/kategori"); ?>" class="kt-menu__link kt-menu__toggle">
-                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-                                                <span class="kt-menu__link-text">Kategori</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-menu__item kt-menu__item--submenu <?php if ($this->uri->uri_string() == 'data/rak') {
-                                                                                            echo 'kt-menu__item--active';
-                                                                                        } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                            <a href="<?php echo base_url("data/rak"); ?>" class="kt-menu__link kt-menu__toggle">
-                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-                                                <span class="kt-menu__link-text">Rak</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                                <li class="kt-menu__item <?php if ($this->uri->uri_string() == "user") {
+                                    echo 'kt-menu__item--active';
+                                } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('user'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" />
+                                                    <path d="M11.0563554,18.6706981 L5.33593024,14.122919 C4.94553994,13.8125559 4.37746707,13.8774308 4.06710397,14.2678211 C4.06471678,14.2708238 4.06234874,14.2738418 4.06,14.2768747 L4.06,14.2768747 C3.75257288,14.6738539 3.82516916,15.244888 4.22214834,15.5523151 C4.22358765,15.5534297 4.2250303,15.55454 4.22647627,15.555646 L11.0872776,20.8031356 C11.6250734,21.2144692 12.371757,21.2145375 12.909628,20.8033023 L19.7677785,15.559828 C20.1693192,15.2528257 20.2459576,14.6784381 19.9389553,14.2768974 C19.9376429,14.2751809 19.9363245,14.2734691 19.935,14.2717619 L19.935,14.2717619 C19.6266937,13.8743807 19.0546209,13.8021712 18.6572397,14.1104775 C18.654352,14.112718 18.6514778,14.1149757 18.6486172,14.1172508 L12.9235044,18.6705218 C12.377022,19.1051477 11.6029199,19.1052208 11.0563554,18.6706981 Z" fill="#000000" opacity="0.3" />
+                                                </g>
+                                            </svg></span><span class="kt-menu__link-text">Data Penggua</span></a></li>
+                                <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'data' || $this->uri->uri_string() == 'data/rak' || $this->uri->uri_string() == 'data/kategori') {
+                                    echo 'kt-menu__item--active kt-menu__item--open';
+                                } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                    <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                                        <span class="kt-menu__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16" />
+                                                    <path d="M13.6855025,18.7082217 C15.9113859,17.8189707 18.682885,17.2495635 22,17 C22,16.9325178 22,13.1012863 22,5.50630526 L21.9999762,5.50630526 C21.9999762,5.23017604 21.7761292,5.00632908 21.5,5.00632908 C21.4957817,5.00632908 21.4915635,5.00638247 21.4873465,5.00648922 C18.658231,5.07811173 15.8291155,5.74261533 13,7 C13,7.04449645 13,10.79246 13,18.2438906 L12.9999854,18.2438906 C12.9999854,18.520041 13.2238496,18.7439052 13.5,18.7439052 C13.5635398,18.7439052 13.6264972,18.7317946 13.6855025,18.7082217 Z" fill="#000000" fill-rule="nonzero" />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                        <span class="kt-menu__link-text">Pustaka</span>
+                                        <i class="kt-menu__ver-arrow la la-angle-right"></i>
+                                    </a>
+                                    <div class="kt-menu__submenu">
+                                        <span class="kt-menu__arrow"></span>
+                                        <ul class="kt-menu__subnav">
+                                            <li class="kt-menu__item kt-menu__item--parent" aria-haspopup="true">
+                                                <span class="kt-menu__link"><span class="kt-menu__link-text">Pages</span></span>
+                                            </li>
+                                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'data') {
+                                                echo 'kt-menu__item--active';
+                                            } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                                <a href="<?php echo base_url("data"); ?>" class="kt-menu__link kt-menu__toggle">
+                                                    <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                    <span class="kt-menu__link-text">Data Buku</span>
+                                                </a>
+                                            </li>
+                                            <li class="kt-menu__item kt-menu__item--submenu <?php if ($this->uri->uri_string() == 'data/kategori') {
+                                                echo 'kt-menu__item--active';
+                                            } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                                <a href="<?php echo base_url("data/kategori"); ?>" class="kt-menu__link kt-menu__toggle">
+                                                    <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                    <span class="kt-menu__link-text">Kategori</span>
+                                                </a>
+                                            </li>
+                                            <li class="kt-menu__item kt-menu__item--submenu <?php if ($this->uri->uri_string() == 'data/rak') {
+                                                echo 'kt-menu__item--active';
+                                            } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                                                <a href="<?php echo base_url("data/rak"); ?>" class="kt-menu__link kt-menu__toggle">
+                                                    <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                                                    <span class="kt-menu__link-text">Rak</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
 
 
-                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'transaksi' || $this->uri->uri_string() == 'transaksi/kembali') {
-                                                            echo 'kt-menu__item--active kt-menu__item--open';
-                                                        } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
-                                    <span class="kt-menu__link-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <rect fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16" />
-                                                <path d="M4.5,7 L9.5,7 C10.3284271,7 11,7.67157288 11,8.5 C11,9.32842712 10.3284271,10 9.5,10 L4.5,10 C3.67157288,10 3,9.32842712 3,8.5 C3,7.67157288 3.67157288,7 4.5,7 Z M13.5,15 L18.5,15 C19.3284271,15 20,15.6715729 20,16.5 C20,17.3284271 19.3284271,18 18.5,18 L13.5,18 C12.6715729,18 12,17.3284271 12,16.5 C12,15.6715729 12.6715729,15 13.5,15 Z" fill="#000000" fill-rule="nonzero" />
-                                            </g>
-                                        </svg>
-                                    </span>
-                                    <span class="kt-menu__link-text">Transaksi</span>
-                                    <i class="kt-menu__ver-arrow la la-angle-right"></i>
-                                </a>
-                                <div class="kt-menu__submenu <?php if ($this->uri->uri_string() == 'transaksi' || $this->uri->uri_string() == 'transaksi/kembali') {
-                                                                    echo 'kt-menu__submenu--on';
-                                                                } ?>">
-                                    <span class="kt-menu__arrow"></span>
-                                    <ul class="kt-menu__subnav">
-                                        <li class="kt-menu__item kt-menu__item--parent" aria-haspopup="true">
-                                            <span class="kt-menu__link"><span class="kt-menu__link-text">Pages</span></span>
-                                        </li>
-                                        <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'transaksi') {
-                                                                        echo 'kt-menu__item--active';
-                                                                    } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                            <a href="<?php echo base_url("transaksi"); ?>" class="kt-menu__link kt-menu__toggle">
-                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-                                                <span class="kt-menu__link-text">Peminjaman</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'transaksi/kembali') {
-                                                                        echo 'kt-menu__item--active';
-                                                                    } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                            <a href="<?php echo base_url("transaksi/kembali"); ?>" class="kt-menu__link kt-menu__toggle">
-                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-                                                <span class="kt-menu__link-text">Pengembalian</span>
-                                            </a>
-                                        </li>
-                                        <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'transaksi/booking') {
-                                                                        echo 'kt-menu__item--active';
-                                                                    } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
-                                            <a href="<?php echo base_url("transaksi/booking"); ?>" class="kt-menu__link kt-menu__toggle">
-                                                <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
-                                                <span class="kt-menu__link-text">Booking</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
+                                <!-- Main Menu Item: Transaksi -->
+    <li class="kt-menu__item <?php
+    if ($this->uri->uri_string() == 'transaksi' || $this->uri->uri_string() == 'transaksi/kembali' || $this->uri->uri_string() == 'transaksi/booking') {
+        echo 'kt-menu__item--active kt-menu__item--open';
+    } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+        <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+            <!-- Menu Icon -->
+            <span class="kt-menu__link-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <rect fill="#000000" opacity="0.3" x="4" y="4" width="8" height="16" />
+                                                    <path d="M4.5,7 L9.5,7 C10.3284271,7 11,7.67157288 11,8.5 C11,9.32842712 10.3284271,10 9.5,10 L4.5,10 C3.67157288,10 3,9.32842712 3,8.5 C3,7.67157288 3.67157288,7 4.5,7 Z M13.5,15 L18.5,15 C19.3284271,15 20,15.6715729 20,16.5 C20,17.3284271 19.3284271,18 18.5,18 L13.5,18 C12.6715729,18 12,17.3284271 12,16.5 C12,15.6715729 12.6715729,15 13.5,15 Z" fill="#000000" fill-rule="nonzero" />
+                                                </g>
+                                            </svg>
+            </span>
+            <span class="kt-menu__link-text">Transaksi</span>
+            <i class="kt-menu__ver-arrow la la-angle-right"></i>
+        </a>
+        <!-- Submenu -->
+        <div class="kt-menu__submenu <?php
+        if ($this->uri->uri_string() == 'transaksi' || $this->uri->uri_string() == 'transaksi/kembali' || $this->uri->uri_string() == 'transaksi/booking') {
+            echo 'kt-menu__submenu--on';
+        } ?>">
+            <span class="kt-menu__arrow"></span>
+            <ul class="kt-menu__subnav">
+                <!-- Parent Item: Pages -->
+                <li class="kt-menu__item kt-menu__item--parent" aria-haspopup="true">
+                    <span class="kt-menu__link"><span class="kt-menu__link-text">Pages</span></span>
+                </li>
+                <!-- Submenu Item: Peminjaman -->
+                <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'transaksi') {
+                    echo 'kt-menu__item--active';
+                } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                    <a href="<?php echo base_url("transaksi"); ?>" class="kt-menu__link kt-menu__toggle">
+                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                        <span class="kt-menu__link-text">Peminjaman</span>
+                    </a>
+                </li>
+                <!-- Submenu Item: Pengembalian -->
+                <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'transaksi/kembali') {
+                    echo 'kt-menu__item--active';
+                } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                    <a href="<?php echo base_url("transaksi/kembali"); ?>" class="kt-menu__link kt-menu__toggle">
+                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                        <span class="kt-menu__link-text">Pengembalian</span>
+                    </a>
+                </li>
+                <!-- Submenu Item: Booking -->
+                <li class="kt-menu__item <?php if ($this->uri->uri_string() == 'transaksi/booking') {
+                    echo 'kt-menu__item--active';
+                } ?>" aria-haspopup="true" data-ktmenu-submenu-toggle="hover">
+                    <a href="<?php echo base_url("transaksi/booking"); ?>" class="kt-menu__link kt-menu__toggle">
+                        <i class="kt-menu__link-bullet kt-menu__link-bullet--dot"><span></span></i>
+                        <span class="kt-menu__link-text">Booking</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </li>
+
                         <?php } ?>
 
                         <!-- data anggota -->
                         <?php if ($this->session->userdata('level') == 'Anggota') { ?>
-                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == "transaksi") {
-                                                            echo 'kt-menu__item--active';
-                                                        } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('transaksi'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <path d="M2,13 C2,12.5 2.5,12 3,12 C3.5,12 4,12.5 4,13 C4,13.3333333 4,15 4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 C2,15 2,13.3333333 2,13 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                <rect fill="#000000" opacity="0.3" x="11" y="2" width="2" height="14" rx="1" />
-                                                <path d="M12.0362375,3.37797611 L7.70710678,7.70710678 C7.31658249,8.09763107 6.68341751,8.09763107 6.29289322,7.70710678 C5.90236893,7.31658249 5.90236893,6.68341751 6.29289322,6.29289322 L11.2928932,1.29289322 C11.6689749,0.916811528 12.2736364,0.900910387 12.6689647,1.25670585 L17.6689647,5.75670585 C18.0794748,6.12616487 18.1127532,6.75845471 17.7432941,7.16896473 C17.3738351,7.57947475 16.7415453,7.61275317 16.3310353,7.24329415 L12.0362375,3.37797611 Z" fill="#000000" fill-rule="nonzero" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">Data Peminjaman</span></a></li>
+                                <li class="kt-menu__item <?php if ($this->uri->uri_string() == "transaksi") {
+                                    echo 'kt-menu__item--active';
+                                } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('transaksi'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <path d="M2,13 C2,12.5 2.5,12 3,12 C3.5,12 4,12.5 4,13 C4,13.3333333 4,15 4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 C2,15 2,13.3333333 2,13 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                    <rect fill="#000000" opacity="0.3" x="11" y="2" width="2" height="14" rx="1" />
+                                                    <path d="M12.0362375,3.37797611 L7.70710678,7.70710678 C7.31658249,8.09763107 6.68341751,8.09763107 6.29289322,7.70710678 C5.90236893,7.31658249 5.90236893,6.68341751 6.29289322,6.29289322 L11.2928932,1.29289322 C11.6689749,0.916811528 12.2736364,0.900910387 12.6689647,1.25670585 L17.6689647,5.75670585 C18.0794748,6.12616487 18.1127532,6.75845471 17.7432941,7.16896473 C17.3738351,7.57947475 16.7415453,7.61275317 16.3310353,7.24329415 L12.0362375,3.37797611 Z" fill="#000000" fill-rule="nonzero" />
+                                                </g>
+                                            </svg></span><span class="kt-menu__link-text">Data Peminjaman</span></a></li>
 
-                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == "transaksi/kembali") {
-                                                            echo 'kt-menu__item--active';
-                                                        } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('transaksi/kembali'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <path d="M2,13 C2,12.5 2.5,12 3,12 C3.5,12 4,12.5 4,13 C4,13.3333333 4,15 4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 C2,15 2,13.3333333 2,13 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 8.000000) rotate(-180.000000) translate(-12.000000, -8.000000) " x="11" y="1" width="2" height="14" rx="1" />
-                                                <path d="M7.70710678,15.7071068 C7.31658249,16.0976311 6.68341751,16.0976311 6.29289322,15.7071068 C5.90236893,15.3165825 5.90236893,14.6834175 6.29289322,14.2928932 L11.2928932,9.29289322 C11.6689749,8.91681153 12.2736364,8.90091039 12.6689647,9.25670585 L17.6689647,13.7567059 C18.0794748,14.1261649 18.1127532,14.7584547 17.7432941,15.1689647 C17.3738351,15.5794748 16.7415453,15.6127532 16.3310353,15.2432941 L12.0362375,11.3779761 L7.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000004, 12.499999) rotate(-180.000000) translate(-12.000004, -12.499999) " />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">Data Pengembalian</span></a></li>
+                                <li class="kt-menu__item <?php if ($this->uri->uri_string() == "transaksi/kembali") {
+                                    echo 'kt-menu__item--active';
+                                } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('transaksi/kembali'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <path d="M2,13 C2,12.5 2.5,12 3,12 C3.5,12 4,12.5 4,13 C4,13.3333333 4,15 4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 C2,15 2,13.3333333 2,13 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 8.000000) rotate(-180.000000) translate(-12.000000, -8.000000) " x="11" y="1" width="2" height="14" rx="1" />
+                                                    <path d="M7.70710678,15.7071068 C7.31658249,16.0976311 6.68341751,16.0976311 6.29289322,15.7071068 C5.90236893,15.3165825 5.90236893,14.6834175 6.29289322,14.2928932 L11.2928932,9.29289322 C11.6689749,8.91681153 12.2736364,8.90091039 12.6689647,9.25670585 L17.6689647,13.7567059 C18.0794748,14.1261649 18.1127532,14.7584547 17.7432941,15.1689647 C17.3738351,15.5794748 16.7415453,15.6127532 16.3310353,15.2432941 L12.0362375,11.3779761 L7.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000004, 12.499999) rotate(-180.000000) translate(-12.000004, -12.499999) " />
+                                                </g>
+                                            </svg></span><span class="kt-menu__link-text">Data Pengembalian</span></a></li>
 
-                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == "data") {
-                                                            echo 'kt-menu__item--active';
-                                                        } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('data'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">Cari Buku</span></a></li>
+                                <li class="kt-menu__item <?php if ($this->uri->uri_string() == "data") {
+                                    echo 'kt-menu__item--active';
+                                } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('data'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <path d="M14.2928932,16.7071068 C13.9023689,16.3165825 13.9023689,15.6834175 14.2928932,15.2928932 C14.6834175,14.9023689 15.3165825,14.9023689 15.7071068,15.2928932 L19.7071068,19.2928932 C20.0976311,19.6834175 20.0976311,20.3165825 19.7071068,20.7071068 C19.3165825,21.0976311 18.6834175,21.0976311 18.2928932,20.7071068 L14.2928932,16.7071068 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                    <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z M11,18 C7.13400675,18 4,14.8659932 4,11 C4,7.13400675 7.13400675,4 11,4 C14.8659932,4 18,7.13400675 18,11 C18,14.8659932 14.8659932,18 11,18 Z" fill="#000000" fill-rule="nonzero" />
+                                                </g>
+                                            </svg></span><span class="kt-menu__link-text">Cari Buku</span></a></li>
 
-                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == "user/edit/'" . $this->uri->segment('3')) {
-                                                            echo 'kt-menu__item--active';
-                                                        } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('user/edit/' . $this->session->userdata('ses_id')); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <polygon points="0 0 24 0 24 24 0 24" />
-                                                <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">Data Anggota</span></a></li>
+                                <li class="kt-menu__item <?php if ($this->uri->uri_string() == "user/edit/'" . $this->uri->segment('3')) {
+                                    echo 'kt-menu__item--active';
+                                } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('user/edit/' . $this->session->userdata('ses_id')); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <polygon points="0 0 24 0 24 24 0 24" />
+                                                    <path d="M12,11 C9.790861,11 8,9.209139 8,7 C8,4.790861 9.790861,3 12,3 C14.209139,3 16,4.790861 16,7 C16,9.209139 14.209139,11 12,11 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                    <path d="M3.00065168,20.1992055 C3.38825852,15.4265159 7.26191235,13 11.9833413,13 C16.7712164,13 20.7048837,15.2931929 20.9979143,20.2 C21.0095879,20.3954741 20.9979143,21 20.2466999,21 C16.541124,21 11.0347247,21 3.72750223,21 C3.47671215,21 2.97953825,20.45918 3.00065168,20.1992055 Z" fill="#000000" fill-rule="nonzero" />
+                                                </g>
+                                            </svg></span><span class="kt-menu__link-text">Data Anggota</span></a></li>
 
-                            <li class="kt-menu__item <?php if ($this->uri->uri_string() == "transaksi/booking") {
-                                                            echo 'kt-menu__item--active';
-                                                        } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('transaksi/booking'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <path d="M2,13 C2,12.5 2.5,12 3,12 C3.5,12 4,12.5 4,13 C4,13.3333333 4,15 4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 C2,15 2,13.3333333 2,13 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-                                                <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 8.000000) rotate(-180.000000) translate(-12.000000, -8.000000) " x="11" y="1" width="2" height="14" rx="1" />
-                                                <path d="M7.70710678,15.7071068 C7.31658249,16.0976311 6.68341751,16.0976311 6.29289322,15.7071068 C5.90236893,15.3165825 5.90236893,14.6834175 6.29289322,14.2928932 L11.2928932,9.29289322 C11.6689749,8.91681153 12.2736364,8.90091039 12.6689647,9.25670585 L17.6689647,13.7567059 C18.0794748,14.1261649 18.1127532,14.7584547 17.7432941,15.1689647 C17.3738351,15.5794748 16.7415453,15.6127532 16.3310353,15.2432941 L12.0362375,11.3779761 L7.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000004, 12.499999) rotate(-180.000000) translate(-12.000004, -12.499999) " />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">Data Booking</span></a></li>
+                                <li class="kt-menu__item <?php if ($this->uri->uri_string() == "transaksi/booking") {
+                                    echo 'kt-menu__item--active';
+                                } ?>" ariap="tr-haspopuue"><a href="<?php echo base_url('transaksi/booking'); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <path d="M2,13 C2,12.5 2.5,12 3,12 C3.5,12 4,12.5 4,13 C4,13.3333333 4,15 4,18 C4,19.1045695 4.8954305,20 6,20 L18,20 C19.1045695,20 20,19.1045695 20,18 L20,13 C20,12.4477153 20.4477153,12 21,12 C21.5522847,12 22,12.4477153 22,13 L22,18 C22,20.209139 20.209139,22 18,22 L6,22 C3.790861,22 2,20.209139 2,18 C2,15 2,13.3333333 2,13 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
+                                                    <rect fill="#000000" opacity="0.3" transform="translate(12.000000, 8.000000) rotate(-180.000000) translate(-12.000000, -8.000000) " x="11" y="1" width="2" height="14" rx="1" />
+                                                    <path d="M7.70710678,15.7071068 C7.31658249,16.0976311 6.68341751,16.0976311 6.29289322,15.7071068 C5.90236893,15.3165825 5.90236893,14.6834175 6.29289322,14.2928932 L11.2928932,9.29289322 C11.6689749,8.91681153 12.2736364,8.90091039 12.6689647,9.25670585 L17.6689647,13.7567059 C18.0794748,14.1261649 18.1127532,14.7584547 17.7432941,15.1689647 C17.3738351,15.5794748 16.7415453,15.6127532 16.3310353,15.2432941 L12.0362375,11.3779761 L7.70710678,15.7071068 Z" fill="#000000" fill-rule="nonzero" transform="translate(12.000004, 12.499999) rotate(-180.000000) translate(-12.000004, -12.499999) " />
+                                                </g>
+                                            </svg></span><span class="kt-menu__link-text">Data Booking</span></a></li>
 
-                            <li class="kt-menu__item" ariap="tr-haspopuue"><a href="<?php echo base_url('user/detail/' . $this->session->userdata('ses_id')); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
-                                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                <rect x="0" y="0" width="24" height="24" />
-                                                <path d="M16,17 L16,21 C16,21.5522847 15.5522847,22 15,22 L9,22 C8.44771525,22 8,21.5522847 8,21 L8,17 L5,17 C3.8954305,17 3,16.1045695 3,15 L3,8 C3,6.8954305 3.8954305,6 5,6 L19,6 C20.1045695,6 21,6.8954305 21,8 L21,15 C21,16.1045695 20.1045695,17 19,17 L16,17 Z M17.5,11 C18.3284271,11 19,10.3284271 19,9.5 C19,8.67157288 18.3284271,8 17.5,8 C16.6715729,8 16,8.67157288 16,9.5 C16,10.3284271 16.6715729,11 17.5,11 Z M10,14 L10,20 L14,20 L14,14 L10,14 Z" fill="#000000" />
-                                                <rect fill="#000000" opacity="0.3" x="8" y="2" width="8" height="2" rx="1" />
-                                            </g>
-                                        </svg></span><span class="kt-menu__link-text">Cetak Kartu</span></a></li>
+                                <li class="kt-menu__item" ariap="tr-haspopuue"><a href="<?php echo base_url('user/detail/' . $this->session->userdata('ses_id')); ?>" class="kt-menu__link "><span class="kt-menu__link-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                                    <rect x="0" y="0" width="24" height="24" />
+                                                    <path d="M16,17 L16,21 C16,21.5522847 15.5522847,22 15,22 L9,22 C8.44771525,22 8,21.5522847 8,21 L8,17 L5,17 C3.8954305,17 3,16.1045695 3,15 L3,8 C3,6.8954305 3.8954305,6 5,6 L19,6 C20.1045695,6 21,6.8954305 21,8 L21,15 C21,16.1045695 20.1045695,17 19,17 L16,17 Z M17.5,11 C18.3284271,11 19,10.3284271 19,9.5 C19,8.67157288 18.3284271,8 17.5,8 C16.6715729,8 16,8.67157288 16,9.5 C16,10.3284271 16.6715729,11 17.5,11 Z M10,14 L10,20 L14,20 L14,14 L10,14 Z" fill="#000000" />
+                                                    <rect fill="#000000" opacity="0.3" x="8" y="2" width="8" height="2" rx="1" />
+                                                </g>
+                                            </svg></span><span class="kt-menu__link-text">Cetak Kartu</span></a></li>
 
                         <?php } ?>
                     </ul>
