@@ -36,7 +36,15 @@
 													<div class="kt-widget__media kt-hidden-">
 													<?php if(!empty($buku->sampul !== "0")){?>
 									<a href="<?= base_url('assets_style/image/buku/'.$buku->sampul);?>" target="_blank">
-										<img src="<?= base_url('assets_style/image/buku/'.$buku->sampul);?>" style="width:170px;height:170px;" class="img-responsive">
+									<center>
+                            <?php if (!empty($isi['sampul']) && $isi['sampul'] !== "0") { ?>
+                                <img src="<?php echo base_url(); ?>assets_style/image/buku/<?php echo $isi['sampul']; ?>"
+                                    alt="#" class="img-responsive" style="height:170PX;width:170px;" />
+                            <?php } else { ?>
+                                <!--<img src="" alt="#" class="user-image" style="border:2px solid #fff;"/>-->
+                                <i class="fa fa-book fa-3x" style="color:#333;"></i>
+                            <?php } ?>
+                        </center>
 									</a>
 									<?php }else{ echo '<br/><p style="color:red">* Tidak ada Sampul</p>';}?>
 													</div>
