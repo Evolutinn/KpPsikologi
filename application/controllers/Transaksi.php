@@ -591,5 +591,6 @@ class Transaksi extends CI_Controller {
         }
         return -1;
     }
-
 }
+
+
